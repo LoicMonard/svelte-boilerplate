@@ -1,6 +1,19 @@
 <script>
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
+
+  const cards = [
+    {
+      title: 'Buying a new monitor',
+      date: '2020-01-01',
+      description: 'I want to buy a new monitor'
+    },
+    {
+      title: 'Having a 30 min run',
+      date: '2020-01-01',
+      description: 'I had a 30 min run on the Paris Marathon'
+    }
+  ]
 </script>
 
 <main>
@@ -8,6 +21,15 @@
   <h1>Hello world!</h1>
 
   <Counter />
+
+  <ul>
+    {#each cards as card}
+      <li>
+        <h2>{card.title}</h2>
+        <p>{card.description}</p>
+      </li>
+    {/each}
+  </ul>
 
   <p>
     Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
